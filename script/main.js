@@ -12,12 +12,15 @@
 	// functionality always goes in the middle -> how do we want the app to behave?
 
 	function changedBGImage() {
-	debugger;
+	// debugger;
+	theHeading.textContent = "Super Awesome Drag and Drop Game!"
+	theHeading.style.color = "orange"
 
  }
 
 	// step 2
 	// event handling always goes at the bottom =>
 	// how do we want users to interact with our app
+	theButton.addEventListener('click', changedBGImage)
 	
 })();
