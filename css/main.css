@@ -102,4 +102,22 @@ footer {
 
 #buttonHolder img:hover {
 	opacity:.5;
+
+	
+}
+
+#headLine h1 {
+	transition: all ease 0.5s;
+}
+
+.orange-headline {
+	color: orange;
+}
+
+#headLine p {
+	transition:  all ease 1s;
+}
+
+.blue-headline {
+	color: blue;
 }
