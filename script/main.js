@@ -5,7 +5,7 @@
 	// variables always go at the top
 	// these are the connections that you're making to elements on the page
 	// using CSS to select with JavaScript
-	let theButtons = document.querySelectorAll("#buttonHolder"),
+	let theButtons = document.querySelectorAll("#buttonHolder img"),
 	theHeading = document.querySelector("#headLine h1");
 	theSubheading = document.querySelector('#headLine p')
 	puzzleBoard = document.querySelector(".puzzle-board")
@@ -20,6 +20,9 @@
 	// start with the object, and then change a property or run a method
 	theHeading.classList.add('orange-headline')
 	theSubheading.classList.add('blue-headline')
+	let theNewSource = "images/backGround" + this.id + ".jpg";
+
+	console.log(theNewSource);
 
  }
 
