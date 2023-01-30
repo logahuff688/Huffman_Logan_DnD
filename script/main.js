@@ -1,5 +1,5 @@
 (() => {
-	// set up the puzzle pieces and boards ##
+	// set up the puzzle pieces and boards
 
 
 	// variables always go at the top
@@ -9,6 +9,11 @@
 
 	// step 3
 	// functionality always goes in the middle -> how do we want the app to behave?
+
+	function changedBGImage() {
+	debugger;
+
+ }
 
 	// step 2
 	// event handling always goes at the bottom =>
