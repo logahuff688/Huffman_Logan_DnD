@@ -20,6 +20,7 @@
 
 	function changedBGImage() {
 
+		// bug fix #2 should go here. it's at most 3 lines of JS code.
 		// the `` is a JavaScript template string. It tells the JS engine to evaluate the express
 		puzzleBoard.style.backgroundImage = `url('images/backGround${this.id}.jpg')`;
 	}
@@ -30,12 +31,16 @@
 		draggedPiece = this;
 	}
 
-	function handleDragOver() {
+	function handleDragOver(e) {
+		e.preventDefault ();
 		console.log('dropped something on me');
 	}
 
-	function handleDrop() {
+	function handleDrop(e) {
+		e.preventDefault();
 		console.log('dropped something on me');        
+		// bug fix #1 goes here
+
 		// this line is going to move the dragged piece from the left side of the board
 		// into whatever drop zone we choose. appendChild means "add element to the conatiner"
 		this.appendChild(draggedPiece);
