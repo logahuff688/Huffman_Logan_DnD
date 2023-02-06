@@ -1,4 +1,4 @@
-(() => {
+ (() => {
 	// set up the puzzle pieces and boards
 
 
@@ -14,17 +14,10 @@
 	// functionality always goes in the middle -> how do we want the app to behave?
 
 	function changedBGImage() {
-	// debugger;
-	theHeading.textContent = "Super Awesome Drag and Drop Game!"
-	
-	// start with the object, and then change a property or run a method
-	theHeading.classList.add('orange-headline')
-	theSubheading.classList.add('blue-headline')
-	let theNewSource = "images/backGround" + this.id + ".jpg";
 
-	console.log(theNewSource);
-
- }
+		// the `` is a JavaScript template string. It tells the JS engine to evaluate the express
+		puzzleBoard.style.backgroundImage = `url('images/backGround${this.id}.jpg')`;
+	}
 
 	// step 2
 	// event handling always goes at the bottom =>
