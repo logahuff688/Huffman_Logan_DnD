@@ -39,12 +39,13 @@
 	function handleDrop(e) {
 		e.preventDefault();
 		console.log('dropped something on me');        
-		// bug fix #1 goes here
-
-		// this line is going to move the dragged piece from the left side of the board
-		// into whatever drop zone we choose. appendChild means "add element to the conatiner"
+	  
+		// Add the following lines to scale the images
+		draggedPiece.style.width = "100%";
+		draggedPiece.style.height = "100%";
 		this.appendChild(draggedPiece);
-	}
+	  }
+	  
 
 	// step 2
 
