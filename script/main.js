@@ -23,7 +23,10 @@
 		// bug fix #2 should go here. it's at most 3 lines of JS code.
 		// the `` is a JavaScript template string. It tells the JS engine to evaluate the express
 		puzzleBoard.style.backgroundImage = `url('images/backGround${this.id}.jpg')`;
-	}
+		resetPuzzleBoard();
+		puzzleBoard.style.backgroundImage = `url('images/backGround${this.id}.jpg')`;
+	  }
+	
 
 	function handleStartDrag() {
 		console.log(`started dragging this piece:`, this); // store a reference to the puzzle piece image that we're dragging
@@ -38,13 +41,38 @@
 
 	function handleDrop(e) {
 		e.preventDefault();
-		console.log('dropped something on me');        
+		console.log('dropped something on me');
+	
+		if (this.children.length === 0) {
+			draggedPiece.style.width = "100%";
+			draggedPiece.style.height = "100%";
+			this.appendChild(draggedPiece);
+		} else {
+			// if a piece was already in the drop zone,
+			// remove it and add the new one
+			this.removeChild(this.children[0]);
+			draggedPiece.style.width = "100%";
+			draggedPiece.style.height = "100%";
+			this.appendChild(draggedPiece);
+		}
+		
+		
 	  
-		// Add the following lines to scale the images
 		draggedPiece.style.width = "100%";
 		draggedPiece.style.height = "100%";
 		this.appendChild(draggedPiece);
 	  }
+
+	  function resetPuzzleBoard() {
+		dropZones.forEach(zone => {
+		  while (zone.firstChild) {
+			zone.removeChild(zone.firstChild);
+		  }
+		});
+	  
+		puzzlePieces.forEach(piece => puzzleBoard.appendChild(piece));
+	  }
+	  
 	  
 
 	// step 2
